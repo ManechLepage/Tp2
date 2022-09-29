@@ -1,19 +1,21 @@
 """
 Fait par Manech Lepage
 Groupe 403
-Ce code permet de jouer a un jeu ou l'ordinateur choisit un nombre aleatoire entre 0 et 100 et le joueur doit trouver le nombre.
+Ce code permet de jouer a un jeu ou l'ordinateur choisit un nombre aleatoire et le joueur doit trouver le nombre.
 """
 
 import random
 
+def choose_range() :
+    number_range = str(input("Choississez les bornes du nombre aleatoire. Mettez un espace entre les deux nombres.\nBornes :  ")).split()
+    guessing_nbr = random.randint(int(number_range[0]), int(number_range[1]))
+    return guessing_nbr
 
 def main():
     is_playing = True
 
     while is_playing:
-
-        number_range = str(input("Choississez les bornes du nombre aleatoire. Mettez un espace entre les deux nombres.\nBornes :  ")).split()
-        guessing_nbr = random.randint(int(number_range[0]), int(number_range[1]))
+        guessing_nbr = choose_range()
         guessed_found = False
         guess_count = 0
 
