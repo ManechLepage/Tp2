@@ -1,3 +1,9 @@
+"""
+Fait par Manech Lepage
+Groupe 403
+Ce code permet de jouer a un jeu ou l'ordinateur choisit un nombre aleatoire entre 0 et 100 et le joueur doit trouver le nombre.
+"""
+
 import random
 
 
