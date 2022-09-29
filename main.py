@@ -12,11 +12,13 @@ def main():
 
     while is_playing:
 
-        guessing_nbr = random.randint(0, 1000)
+        number_range = str(input("Choississez les bornes du nombre aleatoire. Mettez un espace entre les deux nombres.\nBornes :  ")).split()
+        guessing_nbr = random.randint(int(number_range[0]), int(number_range[1]))
         guessed_found = False
+        guess_count = 0
 
         while not guessed_found:
-
+            guess_count += 1
             user_guess_defined = False
             while not user_guess_defined:
                 try:
@@ -32,7 +34,7 @@ def main():
             else:
                 print("Votre nombre est plus grand")
 
-        print("Vous avez trouvez le nombre!")
+        print(f"Vous avez trouvez le nombre en {guess_count} essais!")
 
         if input("Enter pour recommencer") != "":
             is_playing = False
