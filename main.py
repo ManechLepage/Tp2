@@ -7,9 +7,12 @@ Ce code permet de jouer a un jeu ou l'ordinateur choisit un nombre aleatoire et 
 import random
 
 def choose_range() :
-    number_range = str(input("Choississez les bornes du nombre aleatoire. Mettez un espace entre les deux nombres.\nBornes :  ")).split()
-    guessing_nbr = random.randint(int(number_range[0]), int(number_range[1]))
-    return guessing_nbr
+    number_range = str(input("Choississez les bornes du nombre aleatoire. Mettez un espace entre les deux nombres.\nBornes :  "))
+    if number_range == "":
+        return random.randint(0, 100)
+    else :
+        number_range = number_range.split()
+        return random.randint(int(number_range[0]), int(number_range[1]))
 
 def main():
     is_playing = True
